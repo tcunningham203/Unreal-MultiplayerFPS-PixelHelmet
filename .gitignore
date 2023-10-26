@@ -1,52 +1,51 @@
-# Prerequisites
-*.d
+# Ignore all files by default, but scan all directories.
+*
+!*/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Do not ignore git files in the root of the repo.
+!/.git*
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Do not ignore current project's `.uproject`.
+!/*.uproject
 
-# Precompiled Headers
-*.gch
-*.pch
+# Do not ignore source, config and plugins dirs.
+!/Source/**
+!/Config/**
+!/Plugins/**
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Only allow .uasset and .umap files from /Content dir.
+# They're tracked by git-lfs, don't forget to track other
+# files if adding them here.
+!/Content/**/*.uasset
+!/Content/**/*.umap
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Allow any files from /RawContent dir.
+# Any file in /RawContent dir will be managed by git lfs.
+!/RawContent/**/*
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# OS/platform generated files.
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Windows
+ehthumbs.db
+Thumbs.db
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Mac OS X
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+# vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# Visual Studio
+.vs
